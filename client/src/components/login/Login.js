@@ -1,83 +1,27 @@
+import "./login.module.scss";
+
 export default function Login() {
   return (
-    <div className="container h-100">
-      <div className="d-flex justify-content-center h-100">
-        <div className="user_card">
-          <div className="d-flex justify-content-center">
-            <div className="brand_logo_container">
-              <img
-                src="https://cdn.freebiesupply.com/logos/large/2x/pinterest-circle-logo-png-transparent.png"
-                className="brand_logo"
-                alt="Logo"
-              />
-            </div>
-          </div>
-          <div className="d-flex justify-content-center form_container">
-            <form>
-              <div className="input-group mb-3">
-                <div className="input-group-append">
-                  <span className="input-group-text">
-                    <i className="fas fa-user"></i>
-                  </span>
-                </div>
-                <input
-                  type="text"
-                  name=""
-                  className="form-control input_user"
-                  value=""
-                  placeholder="username"
-                />
-              </div>
-              <div className="input-group mb-2">
-                <div className="input-group-append">
-                  <span className="input-group-text">
-                    <i className="fas fa-key"></i>
-                  </span>
-                </div>
-                <input
-                  type="password"
-                  name=""
-                  className="form-control input_pass"
-                  value=""
-                  placeholder="password"
-                />
-              </div>
-              <div className="form-group">
-                <div className="custom-control custom-checkbox">
-                  <input
-                    type="checkbox"
-                    className="custom-control-input"
-                    id="customControlInline"
-                  />
-                  <label
-                    className="custom-control-label"
-                    for="customControlInline"
-                  >
-                    Remember me
-                  </label>
-                </div>
-              </div>
-              <div className="d-flex justify-content-center mt-3 login_container">
-                <button type="button" name="button" className="btn login_btn">
-                  Login
-                </button>
-              </div>
-            </form>
-          </div>
-
-          <div className="mt-4">
-            <div className="d-flex justify-content-center links">
-              Don't have an account?{" "}
-              <a href="#" className="ml-2">
-                Sign Up
-              </a>
-            </div>
-            <div className="d-flex justify-content-center links">
-              <a href="#">Forgot your password?</a>
-            </div>
-          </div>
+    
+<div className="container">
+    <div className="logo">Agent Q Dashboard</div>
+    <div className="login-item">
+      <form action="" method="post" className="form form-login">
+        <div className="form-field">
+          <label className="user" for="login-username"><span className="hidden">Username</span></label>
+          <input id="login-username" type="text" className="form-input" placeholder="Username" required/>
         </div>
-      </div>
+
+        <div className="form-field">
+          <label className="lock" for="login-password"><span className="hidden">Password</span></label>
+          <input id="login-password" type="password" className="form-input" placeholder="Password" required/>
+        </div>
+
+        <div className="form-field">
+          <input type="submit" value="Log in"/>
+        </div>
+      </form>
     </div>
+</div>
   );
 }

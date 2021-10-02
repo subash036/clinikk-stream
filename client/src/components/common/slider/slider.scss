@@ -1,0 +1,23 @@
+@import "react-responsive-carousel/lib/styles/carousel.min.css";
+
+#slider{
+    margin-top: 10px;
+    .thumbnail{
+        img{
+            height: 500px;
+            width: 100%;
+        }
+    }
+    .carousel-root{
+        .carousel{
+            .thumbs-wrapper {
+                &.axis-vertical{
+                    text-align: center;
+                }
+            }
+             .slider-wrapper{
+                height: 100vh;
+            }
+        }
+    }
+}
