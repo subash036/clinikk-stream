@@ -7,44 +7,29 @@ export default function Slider() {
         <div id="slider">
             <Carousel dynamicHeight="false">
                 <div className="thumbnail">
-                    <img src="http://placehold.it/320x200" alt="ALT NAME" />
-                    <div className="caption">
-                        <h3>Header Name</h3>
-                        <p>Description</p>
-                        <p adivgn="center"><a href="http://bootsnipp.com/" className="btn btn-primary btn-block">Open</a></p>
-                    </div>
+                    <video id="videoPlayer" width="100%" controls muted="muted" autoplay>
+                        <source src="http://localhost:3004/CDS/bigbuck/video/file_example_MP4_480_1_5MG.mp4" type="video/mp4" />
+                    </video>
                 </div>
                 <div className="thumbnail">
-                    <img src="http://placehold.it/320x200" alt="ALT NAME" />
-                    <div className="caption">
-                        <h3>Header Name</h3>
-                        <p>Description</p>
-                        <p adivgn="center"><a href="http://bootsnipp.com/" className="btn btn-primary btn-block">Open</a></p>
-                    </div>
+                    <video id="videoPlayer" width="100%" controls muted="muted" autoplay>
+                        <source src="http://localhost:3004/CDS/bigbuck/video/file_example_MP4_480_1_5MG.mp4" type="video/mp4" />
+                    </video>
                 </div>
                 <div className="thumbnail">
-                    <img src="http://placehold.it/320x200" alt="ALT NAME" />
-                    <div className="caption">
-                        <h3>Header Name</h3>
-                        <p>Description</p>
-                        <p adivgn="center"><a href="http://bootsnipp.com/" className="btn btn-primary btn-block">Open</a></p>
-                    </div>
+                    <video id="videoPlayer" width="100%" controls muted="muted" autoplay>
+                        <source src="http://localhost:3004/CDS/bigbuck/video/file_example_MP4_480_1_5MG.mp4" type="video/mp4" />
+                    </video>
                 </div>
                 <div className="thumbnail">
-                    <img src="http://placehold.it/320x200" alt="ALT NAME" />
-                    <div className="caption">
-                        <h3>Header Name</h3>
-                        <p>Description</p>
-                        <p adivgn="center"><a href="http://bootsnipp.com/" className="btn btn-primary btn-block">Open</a></p>
-                    </div>
+                    <video id="videoPlayer" width="100%" controls muted="muted" autoplay>
+                        <source src="http://localhost:3004/CDS/bigbuck/video/file_example_MP4_480_1_5MG.mp4" type="video/mp4" />
+                    </video>
                 </div>
                 <div className="thumbnail">
-                    <img src="http://placehold.it/320x200" alt="ALT NAME" />
-                    <div className="caption">
-                        <h3>Header Name</h3>
-                        <p>Description</p>
-                        <p adivgn="center"><a href="http://bootsnipp.com/" className="btn btn-primary btn-block">Open</a></p>
-                    </div>
+                    <video id="videoPlayer" width="100%" controls muted="muted" autoplay>
+                        <source src="http://localhost:3004/CDS/bigbuck/video/file_example_MP4_480_1_5MG.mp4" type="video/mp4" />
+                    </video>
                 </div>
             </Carousel>
         </div>

@@ -24,7 +24,9 @@ export default function Home(props) {
       <div className="thumbnails row">
         <div className="col-lg-2 col-md-3 col-sm-2 col-xs-1">
           <div className="thumbnail">
-            <img src="http://placehold.it/320x200" alt="ALT NAME" />
+            <video id="videoPlayer" width="100%" controls muted="muted" autoplay>
+                <source src="http://localhost:3004/CDS/bigbuck/video/file_example_MP4_480_1_5MG.mp4" type="video/mp4" />
+            </video>
             <div className="caption">
               <h3>Header Name</h3>
               <p>Description</p>
@@ -35,7 +37,9 @@ export default function Home(props) {
         </div>
         <div className="col-lg-2 col-md-3 col-sm-2 col-xs-1">
           <div className="thumbnail">
-            <img src="http://placehold.it/320x200" alt="ALT NAME" />
+            <video id="videoPlayer" width="100%" controls muted="muted" autoplay>
+                <source src="http://localhost:3004/CDS/bigbuck/video/file_example_MP4_480_1_5MG.mp4" type="video/mp4" />
+            </video>
             <div className="caption">
               <h3>Header Name</h3>
               <p>Description</p>
@@ -45,7 +49,9 @@ export default function Home(props) {
         </div>
         <div className="col-lg-2 col-md-3 col-sm-2 col-xs-1">
           <div className="thumbnail">
-            <img src="http://placehold.it/320x200" alt="ALT NAME" />
+            <video id="videoPlayer" width="100%" controls muted="muted" autoplay>
+                <source src="http://localhost:3004/CDS/bigbuck/video/file_example_MP4_480_1_5MG.mp4" type="video/mp4" />
+            </video>
             <div className="caption">
               <h3>Header Name</h3>
               <p>Description</p>
@@ -55,7 +61,9 @@ export default function Home(props) {
         </div>
         <div className="col-lg-2 col-md-3 col-sm-2 col-xs-1">
           <div className="thumbnail">
-            <img src="http://placehold.it/320x200" alt="ALT NAME" />
+            <video id="videoPlayer" width="100%" controls muted="muted" autoplay>
+                <source src="http://localhost:3004/CDS/bigbuck/video/file_example_MP4_480_1_5MG.mp4" type="video/mp4" />
+            </video>
             <div className="caption">
               <h3>Header Name</h3>
               <p>Description</p>
@@ -65,7 +73,9 @@ export default function Home(props) {
         </div>
         <div className="col-lg-2 col-md-3 col-sm-2 col-xs-1">
           <div className="thumbnail">
-            <img src="http://placehold.it/320x200" alt="ALT NAME" />
+            <video id="videoPlayer" width="100%" controls muted="muted" autoplay>
+                <source src="http://localhost:3004/CDS/bigbuck/video/file_example_MP4_480_1_5MG.mp4" type="video/mp4" />
+            </video>
             <div className="caption">
               <h3>Header Name</h3>
               <p>Description</p>
@@ -75,7 +85,9 @@ export default function Home(props) {
         </div>
         <div className="col-lg-2 col-md-3 col-sm-2 col-xs-1">
           <div className="thumbnail">
-            <img src="http://placehold.it/320x200" alt="ALT NAME" />
+            <video id="videoPlayer" width="100%" controls muted="muted" autoplay>
+                <source src="http://localhost:3004/CDS/bigbuck/video/file_example_MP4_480_1_5MG.mp4" type="video/mp4" />
+            </video>
             <div className="caption">
               <h3>Header Name</h3>
               <p>Description</p>
