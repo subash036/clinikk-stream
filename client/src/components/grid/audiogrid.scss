@@ -1,0 +1,33 @@
+.thumbnail {
+    padding: 15px !important;
+    margin-bottom: 10px;
+    .audio-player {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        .poster>div {
+            position: relative;
+            background: black;
+            height: 250px;
+            width: 100%;
+        }
+
+        img {
+            height: 120px;
+            width: 100%;
+        }
+
+    }
+
+    .caption {
+        p {
+            margin-top: 10px;
+            max-height: 100px;
+            overflow: auto;
+            /* Keyword values */
+            scrollbar-width: thin;
+        }
+
+    }
+
+}

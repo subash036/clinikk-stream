@@ -1,17 +1,26 @@
-import { Link, Route } from "react-router-dom";
-import NavBar from "./common/NavBar";
+import { Route, Switch } from "react-router-dom";
+import Audio from "./audio/Audio";
+import NavBar from "./common/nav/NavBar";
 import Home from "./home/Home";
-import Login from "./login/Login";
 
 export default function Navigation() {
   return (
     <div className="col-lg-12">
-      <Route exact path="/home">
-        <Home></Home>
-      </Route>
-      <Route path="/">
-      <Home></Home>
-    </Route>
+      <NavBar />
+      <Switch>
+        <Route path="/home">
+          <Home></Home>
+        </Route>
+        <Route path="/video" component={Home}>
+          <Home></Home>
+        </Route>
+        <Route path="/audio">
+          <Audio></Audio>
+        </Route>
+        <Route path="/">
+          <Home></Home>
+        </Route>
+      </Switch>
     </div>
   );
 }

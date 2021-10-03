@@ -1,100 +1,48 @@
 import Slider from "../common/slider/Slider";
-import React, { useState } from 'react'
-import ReactPlayer from 'react-player'
-
+import React, { useEffect, useState } from 'react'
 import "./home.scss";
-import Modal from "react-responsive-modal";
-import ModalPop from "../common/modal/Modal";
-
+import VideoGrid from "../grid/VideoGrid";
+import Loader from "../common/loader/Loader";
+import {urls} from "../../urls";
 export default function Home(props) {
-  const modalIsOpened = true;
-  const [modalisOpen, setModelOpen] = useState(false);
 
-  function modelOpen() {
-    setModelOpen(true);
-  };
-
-  function modelClose() {
-    setModelOpen(false);
-  };
-
+  const [videos, setVideos] = useState([]);
+  const [loader, setLoader] = useState(true);
+// fetch the vido list
+  useEffect(() => {
+    fetch(`${urls.API_HOST}/media/videos_list`).then(resp => {
+      return resp.json()
+    }).then(data => {
+      console.log("🚀 ~ file: Home.js ~ line 20 ~ fetch ~ data", data);
+      setVideos(data);
+    }).catch(err => {
+      console.log("🚀 ~ file: Home.js ~ line 24 ~ fetch ~ err", err);
+    }).finally(() => {
+      setLoader(false);
+    })
+  }, []);
   return (
     <div className="col-12">
+      {loader && <Loader></Loader>}
       <Slider></Slider>
+      <h2 className="text-center">Recently Watched</h2>
+      <hr/>
       <div className="thumbnails row">
-        <div className="col-lg-2 col-md-3 col-sm-2 col-xs-1">
-          <div className="thumbnail">
-            <video id="videoPlayer" width="100%" controls muted="muted" autoplay>
-                <source src="http://localhost:3004/CDS/bigbuck/video/file_example_MP4_480_1_5MG.mp4" type="video/mp4" />
-            </video>
-            <div className="caption">
-              <h3>Header Name</h3>
-              <p>Description</p>
-              <p adivgn="center"><button onClick={modelOpen} className="btn btn-primary btn-block">Watch</button></p>
-            </div>
-          </div>
-          {modalisOpen && <ModalPop isMedia={true} onClose={modelClose} title="testst" />}
-        </div>
-        <div className="col-lg-2 col-md-3 col-sm-2 col-xs-1">
-          <div className="thumbnail">
-            <video id="videoPlayer" width="100%" controls muted="muted" autoplay>
-                <source src="http://localhost:3004/CDS/bigbuck/video/file_example_MP4_480_1_5MG.mp4" type="video/mp4" />
-            </video>
-            <div className="caption">
-              <h3>Header Name</h3>
-              <p>Description</p>
-              <p adivgn="center"><a href="http://bootsnipp.com/" className="btn btn-primary btn-block">Watch</a></p>
-            </div>
-          </div>
-        </div>
-        <div className="col-lg-2 col-md-3 col-sm-2 col-xs-1">
-          <div className="thumbnail">
-            <video id="videoPlayer" width="100%" controls muted="muted" autoplay>
-                <source src="http://localhost:3004/CDS/bigbuck/video/file_example_MP4_480_1_5MG.mp4" type="video/mp4" />
-            </video>
-            <div className="caption">
-              <h3>Header Name</h3>
-              <p>Description</p>
-              <p adivgn="center"><a href="http://bootsnipp.com/" className="btn btn-primary btn-block">Watch</a></p>
-            </div>
-          </div>
-        </div>
-        <div className="col-lg-2 col-md-3 col-sm-2 col-xs-1">
-          <div className="thumbnail">
-            <video id="videoPlayer" width="100%" controls muted="muted" autoplay>
-                <source src="http://localhost:3004/CDS/bigbuck/video/file_example_MP4_480_1_5MG.mp4" type="video/mp4" />
-            </video>
-            <div className="caption">
-              <h3>Header Name</h3>
-              <p>Description</p>
-              <p adivgn="center"><a href="http://bootsnipp.com/" className="btn btn-primary btn-block">Watch</a></p>
-            </div>
-          </div>
-        </div>
-        <div className="col-lg-2 col-md-3 col-sm-2 col-xs-1">
-          <div className="thumbnail">
-            <video id="videoPlayer" width="100%" controls muted="muted" autoplay>
-                <source src="http://localhost:3004/CDS/bigbuck/video/file_example_MP4_480_1_5MG.mp4" type="video/mp4" />
-            </video>
-            <div className="caption">
-              <h3>Header Name</h3>
-              <p>Description</p>
-              <p adivgn="center"><a href="http://bootsnipp.com/" className="btn btn-primary btn-block">Watch</a></p>
-            </div>
-          </div>
-        </div>
-        <div className="col-lg-2 col-md-3 col-sm-2 col-xs-1">
-          <div className="thumbnail">
-            <video id="videoPlayer" width="100%" controls muted="muted" autoplay>
-                <source src="http://localhost:3004/CDS/bigbuck/video/file_example_MP4_480_1_5MG.mp4" type="video/mp4" />
-            </video>
-            <div className="caption">
-              <h3>Header Name</h3>
-              <p>Description</p>
-              <p adivgn="center"><a href="http://bootsnipp.com/" className="btn btn-primary btn-block">Watch</a></p>
-            </div>
-          </div>
-        </div>
+        {videos.map(video => {
+          return (<div key={video._id} className="col-lg-3 col-md-3 col-sm-2 col-xs-1">
+            <VideoGrid video={video}></VideoGrid>
+          </div>)
+        })}
+      </div>
+      <hr/>
+      <h2 className="text-center">Recommended</h2>
+      <hr/>
+      <div className="thumbnails row">
+        {videos.map(video => {
+          return (<div key={video._id} className="col-lg-2 col-md-3 col-sm-2 col-xs-1">
+            <VideoGrid video={video}></VideoGrid>
+          </div>)
+        })}
       </div>
     </div>
   );

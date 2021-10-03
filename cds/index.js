@@ -1,6 +1,6 @@
 const express = require("express");
 const multer = require("multer");
-var mongoose = require("mongoose");
+const mongoose = require("mongoose");
 const crypto = require("crypto");
 const GridFsStorage = require('multer-gridfs-storage');
 const cors = require("cors");
@@ -10,6 +10,9 @@ const Grid = require("gridfs-stream");
 Grid.mongo = mongoose.mongo;
 
 mongoose.connect(process.env.DB_URL);
+
+const fs = require('fs')
+const genThumbnail = require('simple-thumbnail')
 
 var storage = new GridFsStorage({
     url: process.env.DB_URL,
@@ -150,7 +153,13 @@ let getFilesStream = async (req, res) => {
                 res.writeHead(206, headers);
             };
 
+           if(req.query.thumbs){
+            genThumbnail(readstream, res, '150x100')
+            .then(() => console.log('done!'))
+            .catch(err => console.error(err))
+           }else{
             return readstream.pipe(res);
+           }
         });
     // });
 

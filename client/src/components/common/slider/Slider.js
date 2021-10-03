@@ -1,36 +1,33 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import React, { useEffect, useState } from 'react';
 import { Carousel } from 'react-responsive-carousel';
+import { urls } from '../../../urls';
+import Loader from '../loader/Loader';
+import MediaPlayer from '../media/MediaPlayer';
 import "./slider.scss";
-export default function Slider() {
+export default function Slider(props) {
+   const [videos, setVideos] = useState([]);
+   const [loader, setLoader] = useState(true);
+   useEffect(() => {
+      fetch(`${urls.API_HOST}/media/slider/videos_list`).then(resp => {
+        return resp.json()
+      }).then(data => {
+        console.log("🚀 ~ file: Home.js ~ line 20 ~ fetch ~ data", data);
+        setVideos(data);
+      }).catch(err => {
+        console.log("🚀 ~ file: Home.js ~ line 24 ~ fetch ~ err", err);
+      }).finally(() => {
+        setLoader(false);
+      })
+    }, []);
     return (
         <div id="slider">
+             {loader && <Loader></Loader>}
             <Carousel dynamicHeight="false">
-                <div className="thumbnail">
-                    <video id="videoPlayer" width="100%" controls muted="muted" autoplay>
-                        <source src="http://localhost:3004/CDS/bigbuck/video/file_example_MP4_480_1_5MG.mp4" type="video/mp4" />
-                    </video>
-                </div>
-                <div className="thumbnail">
-                    <video id="videoPlayer" width="100%" controls muted="muted" autoplay>
-                        <source src="http://localhost:3004/CDS/bigbuck/video/file_example_MP4_480_1_5MG.mp4" type="video/mp4" />
-                    </video>
-                </div>
-                <div className="thumbnail">
-                    <video id="videoPlayer" width="100%" controls muted="muted" autoplay>
-                        <source src="http://localhost:3004/CDS/bigbuck/video/file_example_MP4_480_1_5MG.mp4" type="video/mp4" />
-                    </video>
-                </div>
-                <div className="thumbnail">
-                    <video id="videoPlayer" width="100%" controls muted="muted" autoplay>
-                        <source src="http://localhost:3004/CDS/bigbuck/video/file_example_MP4_480_1_5MG.mp4" type="video/mp4" />
-                    </video>
-                </div>
-                <div className="thumbnail">
-                    <video id="videoPlayer" width="100%" controls muted="muted" autoplay>
-                        <source src="http://localhost:3004/CDS/bigbuck/video/file_example_MP4_480_1_5MG.mp4" type="video/mp4" />
-                    </video>
-                </div>
+               {videos.map(video=>{
+                  return (<div key={video._id} className="thumbnail">
+                  <MediaPlayer video={video.video}  poster={video.poster}></MediaPlayer>
+               </div>)
+               })}
             </Carousel>
         </div>
     )

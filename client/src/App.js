@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.scss';
+import Loader from './components/common/loader/Loader';
 
 function App() {
   return (
