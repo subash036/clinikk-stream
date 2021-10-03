@@ -24,7 +24,7 @@ export default function NavBar() {
             </li> */}
             <li className="nav-item">
               <span className="badge badge-pill badge-primary">1</span>
-              <a className="nav-link">Notifications</a>
+              <a href="/" className="nav-link">Notifications</a>
             </li>
           </ul>
         </div>

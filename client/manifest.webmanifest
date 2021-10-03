@@ -1,0 +1,15 @@
+{
+    "background_color": "green",
+    "description": "Shows random fox pictures. Hey, at least it isn't cats.",
+    "display": "fullscreen",
+    "icons": [
+      {
+        "src": "http://localhost:3004/CDS/bigbuck/image/D_Djxv01.jpg",
+        "sizes": "192x192",
+        "type": "image/png"
+      }
+    ],
+    "name": "Clinikk POC",
+    "short_name": "Clinikk",
+    "start_url": "/index.html"
+  }
