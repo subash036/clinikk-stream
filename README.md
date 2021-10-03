@@ -1,7 +1,21 @@
-<!-- # Getting Started with Create React App -->
+##### This App contains 3 modules, Content delivery Sysytem(CDS), Date Server(API), React UI
 
-# Comming SOON!!!
-<!-- 
+## CDS and Server
+Project was bootstrapped with Express generator
+
+## Available Scripts
+
+In the project directory, you can run:
+### `npm install`
+
+##### To install packages
+ 
+### `npm start`
+
+##### To start the app
+
+# Getting Started with React App 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -69,4 +83,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) -->
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
