@@ -11,7 +11,6 @@ Grid.mongo = mongoose.mongo;
 
 mongoose.connect(process.env.DB_URL);
 
-const fs = require('fs')
 const genThumbnail = require('simple-thumbnail')
 
 var storage = new GridFsStorage({
@@ -168,6 +167,9 @@ app.get(
     "/CDS/bigbuck/:contentType/:filename", getFilesStream
 );
 
-// app.listen(process.env.PORT, function () {
-//     console.log("cdn running on ", process.env.PORT);
-// });
+app.listen(process.env.PORT, function () {
+    console.log("cdn running on ", process.env.PORT);
+});
+
+
+module.exports = app;
