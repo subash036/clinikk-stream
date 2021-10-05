@@ -168,6 +168,6 @@ app.get(
     "/CDS/bigbuck/:contentType/:filename", getFilesStream
 );
 
-app.listen(process.env.PORT, function () {
-    console.log("cdn running on ", process.env.PORT);
-});
+// app.listen(process.env.PORT, function () {
+//     console.log("cdn running on ", process.env.PORT);
+// });

@@ -2,11 +2,12 @@ import { Route, Switch } from "react-router-dom";
 import Audio from "./audio/Audio";
 import NavBar from "./common/nav/NavBar";
 import Home from "./home/Home";
+import Counter from "./RND/Counter";
 
 export default function Navigation() {
   return (
     <div className="col-lg-12">
-      <NavBar />
+      {/* <NavBar /> */}
       <Switch>
         <Route path="/home">
           <Home></Home>
@@ -17,8 +18,8 @@ export default function Navigation() {
         <Route path="/audio">
           <Audio></Audio>
         </Route>
-        <Route path="/">
-          <Home></Home>
+        <Route path="/RND">
+          <Counter></Counter>
         </Route>
       </Switch>
     </div>
