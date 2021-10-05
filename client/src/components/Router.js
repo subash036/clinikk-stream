@@ -7,7 +7,7 @@ import Counter from "./RND/Counter";
 export default function Navigation() {
   return (
     <div className="col-lg-12">
-      {/* <NavBar /> */}
+      <NavBar />
       <Switch>
         <Route path="/home">
           <Home></Home>
@@ -17,6 +17,9 @@ export default function Navigation() {
         </Route>
         <Route path="/audio">
           <Audio></Audio>
+        </Route>
+        <Route path="/">
+          <Home></Home>
         </Route>
         <Route path="/RND">
           <Counter></Counter>
